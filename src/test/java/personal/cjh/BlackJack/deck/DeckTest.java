@@ -4,75 +4,134 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
+import personal.cjh.BlackJack.card.Card;
 import personal.cjh.BlackJack.card.Denomination;
 import personal.cjh.BlackJack.card.Suit;
 
 public class DeckTest {
+  @Test
+  public void 인스턴스로_생성된_덱의_유효성_검사() {
+    // GIVEN
+    Deck deck = new Deck();
+
+    // WHEN
+    boolean nullPointCheck = deck == null;
+    boolean instanceCheck = deck instanceof Deck;
+    boolean deckSizeCheck = deck.getDeck().size() == deck.getDeck().size();
+
+    deck.drawCard();
+
+    // THEN
+    assertFalse(nullPointCheck);
+    assertTrue(instanceCheck);
+    assertTrue(deckSizeCheck);
+  }
+
+  @Test
+  public void 덱에서_카드를_뽑았을때_덱의_상태변화를_검사한다() {
+    // GIVEN
+    Deck deck = new Deck();
+
+    // WHEN
+    int beforeDeckSize = deck.getDeck().size();
+    Card card = deck.drawCard();
+    int afterDeckSize = deck.getDeck().size();
+
+    // THEN
+    assertFalse(beforeDeckSize == afterDeckSize);
+    assertTrue(beforeDeckSize == 52);
+    assertTrue(afterDeckSize == 51);
+  }
+
+  @Test
+  public void 덱에서_카드를_뽑았을때_카드의_유효성을_검사한다() {
+    // GIVEN
+    Deck deck = new Deck();
+
+    // WHEN
+    Card card = deck.drawCard();
+
+    // THEN
+    assertTrue(card != null);
+    assertThat(card, instanceOf(Card.class));
+    assertThat(card.check(), instanceOf(ImmutablePair.class));
+    assertThat(card.check().left, instanceOf(Suit.class));
+    assertThat(card.check().right, instanceOf(Denomination.class));
+  }
 
   @Test
   public void 덱이_싱글톤인지_검사한다() {
-    // 첫번째 덱을 생성한다.
+    // GIVEN
     Deck deck = new Deck();
-
-    // 첫번째 덱의 getDeck 함수를 써서 받은 덱이 같은 덱인지 확인
-    assertTrue(deck.getDeck() == deck.getDeck());
-    assertFalse(deck == null);
-    assertTrue(deck instanceof Deck);
-    assertTrue(deck.getDeck().size() == deck.getDeck().size());
-
-    // 카드를 뽑는다.
-    deck.getCard();
-
-    // 카드를 뽑아도 같은 객체인지 검사한다.
-    assertTrue(deck.getDeck() == deck.getDeck());
-    assertFalse(deck == null);
-    assertTrue(deck instanceof Deck);
-    assertTrue(deck.getDeck().size() == deck.getDeck().size());
-
-    // 두번째 덱을 만든다.
     Deck deck2 = new Deck();
 
-    // 두번째 덱의 getDeck 함수를 써서 받은 덱이 같은 덱인지 확인
-    assertTrue(deck2.getDeck() == deck2.getDeck());
-    assertFalse(deck2 == null);
-    assertTrue(deck2 instanceof Deck);
-    assertTrue(deck2.getDeck().size() == deck2.getDeck().size());
+    // WHEN
+    boolean beforeDrawCheck = (deck.getDeck() == deck.getDeck());
+    deck.drawCard();
+    boolean afterDrawCheck = (deck.getDeck() == deck.getDeck());
+    boolean isEqual = (deck.getDeck() == deck2.getDeck());
 
-    // 카드를 뽑는다.
-    deck2.getCard();
+    // THEN
+    assertTrue(beforeDrawCheck);
+    assertTrue(afterDrawCheck);
+    assertFalse(isEqual);
+  }
 
-    // // 카드를 뽑아도 같은 객체인지 검사한다.
-    assertTrue(deck2.getDeck() == deck2.getDeck());
-    assertFalse(deck2 == null);
-    assertTrue(deck2 instanceof Deck);
-    assertTrue(deck2.getDeck().size() == deck2.getDeck().size());
+  @Test
+  public void 덱이_생성됐을때_중복된_카드가_있는지_검사() {
+    // GIVEN
+    Deck deck = new Deck();
+    deck.getDeck().add(new Card(Suit.CLOVER, Denomination.ACE));
 
-    assertFalse(deck.getDeck() == deck2.getDeck());
+    // WHEN
+    List<ImmutablePair<Suit, Denomination>> s = new ArrayList<>();
+    int deckSize = deck.getDeck().size();
+    for (int i = 0; i < deckSize; i++) {
+      Card card = deck.drawCard();
+      System.out.println(card.check().left + ", " + card.check().right);
+      if (s.size() == 0) {
+        s.add(card.check());
+      } else {
+        for (int j = 0; j < s.size(); j++) {
+          if (s.get(j).left.equals(card.check().left)) {
+            if (s.get(j).right.equals(card.check().right)) {
+              throw new RuntimeException();
+            }
+          }
+        }
+      }
+    }
+
+    // THEN
+
   }
 
   @Test
   public void getCard_함수를_사용했을때_덱안의_카드가_정상적으로_줄어드는지_검사() {
+    // GIVEN
     Deck deck = new Deck();
 
-    // 블랙잭 덱은 최초 52장이다.
-    assertThat(deck.getDeck().size(), is(52));
+    // WHEN
+    boolean initSizeEqual = (deck.getDeck().size() == 52);
+    Card card = deck.drawCard();
 
-    // 카드 뽑기
-    Pair<Suit, Denomination> card = deck.getCard();
-
-    // 뽑은 카드가 각 Enum의 객체가 맞는지 검사
-    assertThat(card.getLeft(), instanceOf(Suit.class));
-    assertThat(card.getRight(), instanceOf(Denomination.class));
-
+    // THEN
+    assertThat(card.check().getLeft(), instanceOf(Suit.class));
+    assertThat(card.check().getRight(), instanceOf(Denomination.class));
     assertThat(deck.getDeck().size(), is(51));
 
-    // 순환을 돌면서 정상적으로 DECK 사이즈가 줄어드는지 검사
     int count = 51;
     while (deck.getDeck().size() != 0) {
-      Pair<Suit, Denomination> cd = deck.getCard();
-      printCard(cd, count); // 카드 덱 출력을 보기 위한 함수 출력
+      Card cd = deck.drawCard();
+      printCard(cd.check(), count);
       assertThat(deck.getDeck().size(), is(--count));
     }
   }

@@ -18,7 +18,7 @@ public enum Suit {
   }
 
   /**
-   * 한 슈트의 속성을 출력함.
+   * 속성을 출력합니다.
    *
    * @return the property
    */

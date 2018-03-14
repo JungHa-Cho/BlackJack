@@ -17,7 +17,9 @@ public enum Denomination {
   }
 
   /**
-   * Gets property.
+   * Enum의 속성을 출력합니다.
+   * ACE는 1또는 11로 표시될수 있는 규칙이 있지만,
+   * 후에 규칙을 추상화할때 해당 규칙을 적용하겠습니다.
    *
    * @return the property
    */
