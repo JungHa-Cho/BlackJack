@@ -13,8 +13,8 @@ class DeckTestBySpock extends Specification {
         def card = deck.drawCard()
 
         then:
-        card.left instanceof Suit
-        card.right instanceof Denomination
+        card.check().left instanceof Suit
+        card.check().right instanceof Denomination
     }
 
     def "덱 클래스에서 덱을 받았을때 덱 개수 검사"() {

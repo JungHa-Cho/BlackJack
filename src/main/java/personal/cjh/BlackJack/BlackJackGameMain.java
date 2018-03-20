@@ -1,9 +1,6 @@
 package personal.cjh.BlackJack;
 
-import org.apache.commons.lang3.tuple.ImmutablePair;
 import personal.cjh.BlackJack.card.Card;
-import personal.cjh.BlackJack.card.Denomination;
-import personal.cjh.BlackJack.card.Suit;
 import personal.cjh.BlackJack.deck.Deck;
 
 public class BlackJackGameMain {
