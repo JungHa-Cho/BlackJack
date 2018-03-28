@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. JeongHa, Cho
+ */
+
 package personal.cjh.BlackJack.user;
 
 import java.util.ArrayList;
@@ -8,8 +12,8 @@ import personal.cjh.BlackJack.card.Card;
 /**
  * 각 유저가 들고 있는 핸드, 카드의 집합
  */
-public class Hand {
-  private List<Card> hand;
+public abstract class Hand {
+  List<Card> hand;
 
   /**
    * Hand는 유저당 하나씩
@@ -24,14 +28,14 @@ public class Hand {
    *
    * @param received the received
    */
-  public void receiveCard(Card received) {
+  void receiveCard(Card received) {
     hand.add(received);
   }
 
   /**
    * 가지고 있는 카드를 모두 보여줌
    */
-  public void showCards() {
+  void showCards() {
     ListIterator<Card> is = hand.listIterator();
     while (is.hasNext()) {
       Card card = is.next();
