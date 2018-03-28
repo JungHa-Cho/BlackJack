@@ -2,7 +2,6 @@ package personal.cjh.BlackJack.user;
 
 import personal.cjh.BlackJack.card.Card;
 import personal.cjh.BlackJack.deck.Deck;
-import personal.cjh.BlackJack.rule.Rule;
 
 /**
  * 딜러 클래스
@@ -31,8 +30,8 @@ public class Dealer extends User {
   }
 
   @Override
-  public Rule ruleCheck(Hand hand) {
+  public boolean ruleCheck() {
     // 딜러에게 주어진 룰을 체크함
-    return null;
+    return false;
   }
 }

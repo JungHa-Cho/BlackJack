@@ -1,7 +1,5 @@
 package personal.cjh.BlackJack.rule;
 
-import personal.cjh.BlackJack.user.Hand;
-
 /**
  * 룰 인터페이스
  * 딜러와 유저 모두 적용 받는다.
