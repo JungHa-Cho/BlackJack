@@ -2,6 +2,7 @@ group 'personal.cjh.BlackJack'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'groovy'
 
 sourceCompatibility = 1.8
 
@@ -11,4 +12,10 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.spockframework', name: 'spock-core', version: '1.1-groovy-2.4'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }

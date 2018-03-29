@@ -9,27 +9,24 @@ package personal.cjh.BlackJack.v1;
  */
 public class Player extends User {
 
-  /**
-   * 플레이어는 핸드를 가진다.
-   */
-  Player() {
-    super();
-  }
+    /**
+     * 플레이어는 핸드를 가진다.
+     */
+    Player() {
+        super();
+    }
 
-  @Override
-  void handCheck() {
-    // 가진 핸드를 체크함
-  }
+    void handCheck() {
+        // 가진 핸드를 체크함
+    }
 
-  @Override
-  Card drawCard() {
-    // drawCard 카드를 요청함
-    return null;
-  }
+    Card drawCard() {
+        // drawCard 카드를 요청함
+        return null;
+    }
 
-  @Override
-  public boolean ruleCheck() {
-    // 플레이어에게 주어진 rule을 체크함
-    return false;
-  }
+    public boolean ruleCheck() {
+        // 플레이어에게 주어진 rule을 체크함
+        return false;
+    }
 }
