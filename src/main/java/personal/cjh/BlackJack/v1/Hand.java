@@ -30,15 +30,4 @@ public abstract class Hand {
     void receiveCard(Card received) {
         hand.add(received);
     }
-
-    /**
-     * 가지고 있는 카드를 모두 보여줌
-     */
-    void showCards() {
-        ListIterator<Card> is = hand.listIterator();
-        while (is.hasNext()) {
-            Card card = is.next();
-            System.out.println("Suit : " + card.check().left + "Denomination : " + card.check().right);
-        }
-    }
 }

@@ -8,4 +8,5 @@
 2018-03-26 : DIAGRAM 그리기 [github.io 링크 - 5편](https://jungha-cho.github.io/2018/03/26/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(5)/)                      
 2018-03-27 : BlackJack Diagram ver 2 [github.io 링크 - 6편](https://jungha-cho.github.io/2018/03/27/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(6)/)                  
 2018-03-29 : BlackJack Diagram ver 3 [github.io 링크 - 7편](https://jungha-cho.github.io/2018/03/29/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(7)/)                 
-2018-03-29 : BlackJack Diagram ver 4 [github.io 링크 - 8편](https://jungha-cho.github.io/2018/03/29/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(8)/)                                 
+2018-03-29 : BlackJack Diagram ver 4 [github.io 링크 - 8편](https://jungha-cho.github.io/2018/03/29/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(8)/)
+2018-03-29 : BlackJack Diagram ver 5 [github.io 링크 - 8편](https://jungha-cho.github.io/2018/03/29/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(9)/)                                 

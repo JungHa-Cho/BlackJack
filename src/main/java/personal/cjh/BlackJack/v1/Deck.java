@@ -35,19 +35,10 @@ public class Deck {
      *
      * @return 카드 객체로 반환
      */
-    public Card drawCard() {
+    public Card getCard() {
         int index = random.nextInt(deck.size());
         Card card = deck.get(index);
         deck.remove(index);
         return card;
-    }
-
-    /**
-     * 덱 리스트 변수에 접근하기 위한 메소드
-     *
-     * @return 덱 리스트를 반환합니다
-     */
-    public List<Card> getDeck() {
-        return deck;
     }
 }

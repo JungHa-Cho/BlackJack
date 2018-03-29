@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2018. JeongHa, Cho
+ * Copyright (c) 2018. JeongHa-Cho all rights reserved.
  */
 
-package personal.cjh.BlackJack.v1;
+package personal.cjh.BlackJack.v1.rule;
 
 /**
  * 룰 인터페이스

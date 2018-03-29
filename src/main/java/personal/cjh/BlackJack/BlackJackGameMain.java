@@ -1,28 +1,30 @@
+/*
+ * Copyright (c) 2018. JeongHa-Cho all rights reserved.
+ */
+
 package personal.cjh.BlackJack;
 
-import personal.cjh.BlackJack.v1.Card;
-import personal.cjh.BlackJack.v1.Deck;
+
+import personal.cjh.BlackJack.v1.Dealer;
+import personal.cjh.BlackJack.v1.GameBoard;
+import personal.cjh.BlackJack.v1.Player;
+import personal.cjh.BlackJack.v1.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BlackJackGameMain {
     public static void main(String[] args) {
-        Deck deck = new Deck();
+        List<User> list = new ArrayList<>();
+        User dealer = new Dealer("Kim");
+        User jeongHa = new Player("Cho Jeong Ha");
+        User park = new Player("Park");
 
-        int size = deck.getDeck().size();
-        for (int i = 1; i <= size; i++) {
-            Card card = deck.drawCard();
-            StringBuilder sb = new StringBuilder();
-            sb.append("COUNT : ");
-            sb.append(i);
-            sb.append(" Suit : ");
-            sb.append(card.check().getLeft());
-            sb.append(" Suit Prop : ");
-            sb.append(card.check().getLeft().getProperty());
-            sb.append(" Denomination : ");
-            sb.append(card.check().getRight());
-            sb.append(" Denomination Prop : ");
-            sb.append(card.check().getRight().getProperty());
-            System.out.println(sb.toString());
-            sb.setLength(0);
-        }
+        list.add(dealer);
+        list.add(jeongHa);
+        list.add(park);
+
+        GameBoard gameBoard = new GameBoard(list);
+        gameBoard.gameStart();
     }
 }
