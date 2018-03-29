@@ -1,11 +1,12 @@
-package personal.cjh.BlackJack.deck;
+/*
+ * Copyright (c) 2018. JeongHa, Cho
+ */
+
+package personal.cjh.BlackJack.v1;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import personal.cjh.BlackJack.card.Card;
-import personal.cjh.BlackJack.card.Denomination;
-import personal.cjh.BlackJack.card.Suit;
 
 /**
  * 덱 클래스 입니다.

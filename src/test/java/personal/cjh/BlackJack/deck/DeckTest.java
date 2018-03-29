@@ -4,17 +4,16 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
-import personal.cjh.BlackJack.card.Card;
-import personal.cjh.BlackJack.card.Denomination;
-import personal.cjh.BlackJack.card.Suit;
+import personal.cjh.BlackJack.v1.Card;
+import personal.cjh.BlackJack.v1.Deck;
+import personal.cjh.BlackJack.v1.Denomination;
+import personal.cjh.BlackJack.v1.Suit;
 
 public class DeckTest {
   @Test

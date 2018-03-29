@@ -1,7 +1,7 @@
 package personal.cjh.BlackJack;
 
-import personal.cjh.BlackJack.card.Card;
-import personal.cjh.BlackJack.deck.Deck;
+import personal.cjh.BlackJack.v1.Card;
+import personal.cjh.BlackJack.v1.Deck;
 
 public class BlackJackGameMain {
   public static void main(String[] args) {

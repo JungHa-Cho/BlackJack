@@ -2,10 +2,7 @@
  * Copyright (c) 2018. JeongHa, Cho
  */
 
-package personal.cjh.BlackJack.user;
-
-import personal.cjh.BlackJack.card.Card;
-import personal.cjh.BlackJack.rule.Rule;
+package personal.cjh.BlackJack.v1;
 
 /**
  * 유저 추상 클래스 정의

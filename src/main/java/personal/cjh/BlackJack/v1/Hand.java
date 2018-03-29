@@ -2,12 +2,11 @@
  * Copyright (c) 2018. JeongHa, Cho
  */
 
-package personal.cjh.BlackJack.user;
+package personal.cjh.BlackJack.v1;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
-import personal.cjh.BlackJack.card.Card;
 
 /**
  * 각 유저가 들고 있는 핸드, 카드의 집합

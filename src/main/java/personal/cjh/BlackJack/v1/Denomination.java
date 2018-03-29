@@ -1,4 +1,4 @@
-package personal.cjh.BlackJack.card;
+package personal.cjh.BlackJack.v1;
 
 /**
  * 끗수 Enum

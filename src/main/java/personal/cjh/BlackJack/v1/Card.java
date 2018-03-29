@@ -1,4 +1,4 @@
-package personal.cjh.BlackJack.card;
+package personal.cjh.BlackJack.v1;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
@@ -17,7 +17,7 @@ public class Card {
    * @param suit 한벌 중 한개의 모양
    * @param denomination 끗수
    */
-  public Card(Suit suit, Denomination denomination) {
+  public Card(final Suit suit, final Denomination denomination) {
     this.suit = suit;
     this.denomination = denomination;
   }
@@ -29,6 +29,6 @@ public class Card {
    * @return 변경 불가능한 한쌍으로 리턴합니다.
    */
   public ImmutablePair<Suit, Denomination> check() {
-    return new ImmutablePair<Suit, Denomination>(suit, denomination);
+    return new ImmutablePair<>(suit, denomination);
   }
 }

@@ -1,7 +1,8 @@
-package personal.cjh.BlackJack.user;
+/*
+ * Copyright (c) 2018. JeongHa, Cho
+ */
 
-import personal.cjh.BlackJack.card.Card;
-import personal.cjh.BlackJack.deck.Deck;
+package personal.cjh.BlackJack.v1;
 
 /**
  * 딜러 클래스
