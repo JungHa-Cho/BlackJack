@@ -16,15 +16,18 @@ public class Player extends User {
         super();
     }
 
+    @Override
     void handCheck() {
         // 가진 핸드를 체크함
     }
 
+    @Override
     Card drawCard() {
         // drawCard 카드를 요청함
         return null;
     }
 
+    @Override
     public boolean ruleCheck() {
         // 플레이어에게 주어진 rule을 체크함
         return false;
