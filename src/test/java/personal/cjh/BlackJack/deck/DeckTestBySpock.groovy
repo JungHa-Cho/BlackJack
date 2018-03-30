@@ -1,8 +1,8 @@
 package personal.cjh.BlackJack.deck
 
-import personal.cjh.BlackJack.v1.Deck
-import personal.cjh.BlackJack.v1.Denomination
-import personal.cjh.BlackJack.v1.Suit
+import personal.cjh.BlackJack.v1.card.Deck
+import personal.cjh.BlackJack.v1.card.Denomination
+import personal.cjh.BlackJack.v1.card.Suit
 import spock.lang.Specification
 
 class DeckTestBySpock extends Specification {
@@ -11,7 +11,7 @@ class DeckTestBySpock extends Specification {
         Deck deck = new Deck()
 
         when:
-        def card = deck.drawCard()
+        def card = deck.drawDeck()
 
         then:
         card.check().left instanceof Suit

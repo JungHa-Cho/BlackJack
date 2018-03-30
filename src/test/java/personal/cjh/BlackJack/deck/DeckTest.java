@@ -3,10 +3,10 @@ package personal.cjh.BlackJack.deck;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
-import personal.cjh.BlackJack.v1.Card;
-import personal.cjh.BlackJack.v1.Deck;
-import personal.cjh.BlackJack.v1.Denomination;
-import personal.cjh.BlackJack.v1.Suit;
+import personal.cjh.BlackJack.v1.card.Card;
+import personal.cjh.BlackJack.v1.card.Deck;
+import personal.cjh.BlackJack.v1.card.Denomination;
+import personal.cjh.BlackJack.v1.card.Suit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class DeckTest {
         boolean instanceCheck = deck instanceof Deck;
         boolean deckSizeCheck = deck.getDeck().size() == deck.getDeck().size();
 
-        deck.drawCard();
+        deck.drawDeck();
 
         // THEN
         assertFalse(nullPointCheck);
@@ -41,7 +41,7 @@ public class DeckTest {
 
         // WHEN
         int beforeDeckSize = deck.getDeck().size();
-        Card card = deck.drawCard();
+        Card card = deck.drawDeck();
         int afterDeckSize = deck.getDeck().size();
 
         // THEN
@@ -56,7 +56,7 @@ public class DeckTest {
         Deck deck = new Deck();
 
         // WHEN
-        Card card = deck.drawCard();
+        Card card = deck.drawDeck();
 
         // THEN
         assertTrue(card != null);
@@ -74,7 +74,7 @@ public class DeckTest {
 
         // WHEN
         boolean beforeDrawCheck = (deck.getDeck() == deck.getDeck());
-        deck.drawCard();
+        deck.drawDeck();
         boolean afterDrawCheck = (deck.getDeck() == deck.getDeck());
         boolean isEqual = (deck.getDeck() == deck2.getDeck());
 
@@ -94,7 +94,7 @@ public class DeckTest {
         List<ImmutablePair<Suit, Denomination>> s = new ArrayList<>();
         int deckSize = deck.getDeck().size();
         for (int i = 0; i < deckSize; i++) {
-            Card card = deck.drawCard();
+            Card card = deck.drawDeck();
             System.out.println(card.check().left + ", " + card.check().right);
             if (s.size() == 0) {
                 s.add(card.check());
@@ -120,7 +120,7 @@ public class DeckTest {
 
         // WHEN
         boolean initSizeEqual = (deck.getDeck().size() == 52);
-        Card card = deck.drawCard();
+        Card card = deck.drawDeck();
 
         // THEN
         assertThat(card.check().getLeft(), instanceOf(Suit.class));
@@ -129,7 +129,7 @@ public class DeckTest {
 
         int count = 51;
         while (deck.getDeck().size() != 0) {
-            Card cd = deck.drawCard();
+            Card cd = deck.drawDeck();
             printCard(cd.check(), count);
             assertThat(deck.getDeck().size(), is(--count));
         }

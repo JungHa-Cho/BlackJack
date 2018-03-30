@@ -1,4 +1,8 @@
-package personal.cjh.BlackJack.v1;
+/*
+ * Copyright (c) 2018. JeongHa-Cho all rights reserved.
+ */
+
+package personal.cjh.BlackJack.v1.card;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 

@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2018. JeongHa, Cho
+ * Copyright (c) 2018. JeongHa-Cho all rights reserved.
  */
 
-package personal.cjh.BlackJack.v1;
+package personal.cjh.BlackJack.v1.card;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +10,10 @@ import java.util.Random;
 
 /**
  * 덱 클래스 입니다.
- * 덱 또한 여러장의 카드를 모아논 것이기 때문에 클래스를 이용했습니다.
  */
 public class Deck {
-    private final List<Card> deck = new ArrayList<>();
     private final Random random = new Random();
+    private final List<Card> deck = new ArrayList<>();
 
     /**
      * 덱을 생성할때 새로운 카드를 deck list에 넣습니다.
@@ -35,10 +34,14 @@ public class Deck {
      *
      * @return 카드 객체로 반환
      */
-    public Card getCard() {
+    public Card drawDeck() {
         int index = random.nextInt(deck.size());
         Card card = deck.get(index);
         deck.remove(index);
         return card;
+    }
+
+    public List<Card> getDeck() {
+        return deck;
     }
 }
