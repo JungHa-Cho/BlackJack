@@ -14,7 +14,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PlayerTest {
+public class 플레이어_단위_테스트 {
     Player jeongha;
     Dealer dealer;
 

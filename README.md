@@ -40,4 +40,4 @@
 
 
 
-![blackjack_v8.JPG](/image/blackjack_v8.JPG)
+![blackjack_v9.JPG](/image/blackjack_v9.JPG)

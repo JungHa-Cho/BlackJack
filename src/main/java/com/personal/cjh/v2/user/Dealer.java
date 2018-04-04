@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Dealer extends Player {
+public class Dealer extends User {
     private List<Pair<Suit, Denomination>> deck;
 
     public Dealer(Hit hit, Stay stay, Ace ace) {

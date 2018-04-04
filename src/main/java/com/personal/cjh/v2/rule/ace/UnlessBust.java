@@ -19,21 +19,27 @@ import java.util.List;
 public class UnlessBust implements Ace {
     @Override
     public boolean isEleven(List<Pair<Suit, Denomination>> hand) {
-        int aceSum = 0;
-        int noAceSum = 0;
+        int sum = 0;
+        boolean aceFlag = false;
+
         for (Pair<Suit, Denomination> card : hand) {
             if (card.getRight() == Denomination.ACE) {
-                aceSum += 11;
-                noAceSum += Denomination.ACE.getProperty();
-            } else {
-                aceSum += card.getRight().getProperty();
-                noAceSum += card.getRight().getProperty();
+                aceFlag = true;
             }
+
+            sum += card.getRight().getProperty();
         }
 
-        if (aceSum > 21)
+        if (aceFlag) {
+            if ((sum - Denomination.ACE.getProperty() + 11) > 21) {
+                System.out.println("false");
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            System.out.println("false");
             return false;
-        else
-            return true;
+        }
     }
 }

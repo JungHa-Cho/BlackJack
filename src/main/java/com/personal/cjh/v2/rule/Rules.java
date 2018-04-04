@@ -14,14 +14,33 @@ import org.apache.commons.lang3.tuple.Pair;
 import java.util.List;
 
 public class Rules {
-    Hit hit;
-    Stay stay;
-    Ace ace;
+    private Hit hit;
+    private Stay stay;
+    private Ace ace;
 
     public Rules(Hit hit, Stay stay, Ace ace) {
         this.hit = hit;
         this.stay = stay;
         this.ace = ace;
+    }
+
+    public int calculate(List<Pair<Suit, Denomination>> hand) {
+        int sum = 0;
+
+        for (Pair<Suit, Denomination> card : hand) {
+            if (card.getRight() == Denomination.ACE) {
+                if (isAce(hand)) {
+                    System.out.println("11");
+                    sum += 11;
+                } else {
+                    System.out.println("1");
+                    sum += Denomination.ACE.getProperty();
+                }
+            } else {
+                sum += card.getRight().getProperty();
+            }
+        }
+        return sum;
     }
 
     private boolean isHit(List<Pair<Suit, Denomination>> hand) {
