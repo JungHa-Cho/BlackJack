@@ -3,10 +3,10 @@ package personal.cjh.BlackJack.deck;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
-import personal.cjh.BlackJack.v1.card.Card;
-import personal.cjh.BlackJack.v1.card.Deck;
-import personal.cjh.BlackJack.v1.card.Denomination;
-import personal.cjh.BlackJack.v1.card.Suit;
+import com.personal.cjh.v1.card.Card;
+import com.personal.cjh.v1.card.Deck;
+import com.personal.cjh.v1.card.Denomination;
+import com.personal.cjh.v1.card.Suit;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-group 'personal.cjh.BlackJack'
+group 'com.personal.cjh.v1'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
@@ -13,6 +13,9 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile group: 'org.spockframework', name: 'spock-core', version: '1.1-groovy-2.4'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.9.1'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.17.0'
+
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
 }
 

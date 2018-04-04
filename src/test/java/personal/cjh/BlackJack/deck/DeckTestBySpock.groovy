@@ -1,8 +1,8 @@
 package personal.cjh.BlackJack.deck
 
-import personal.cjh.BlackJack.v1.card.Deck
-import personal.cjh.BlackJack.v1.card.Denomination
-import personal.cjh.BlackJack.v1.card.Suit
+import com.personal.cjh.v1.card.Deck
+import com.personal.cjh.v1.card.Denomination
+import com.personal.cjh.v1.card.Suit
 import spock.lang.Specification
 
 class DeckTestBySpock extends Specification {
