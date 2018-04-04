@@ -23,18 +23,6 @@ public class Player extends Hand {
         hand = new ArrayList<>();
     }
 
-    public boolean checkAce() {
-        return ruleChecker.isAce(hand);
-    }
-
-    public boolean checkStay() {
-        return ruleChecker.isStay(hand);
-    }
-
-    public boolean checkHit() {
-        return ruleChecker.isHit(hand);
-    }
-
     public void showCard() {
         for (Pair<Suit, Denomination> card : hand) {
             int i = 0;

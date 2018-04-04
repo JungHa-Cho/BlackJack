@@ -18,6 +18,6 @@ public class PlayerChoice implements Ace {
     @Override
     public boolean isEleven(List<Pair<Suit, Denomination>> hand) {
         /* 플레이어 초이스는 무조건 true */
-        return false;
+        return true;
     }
 }

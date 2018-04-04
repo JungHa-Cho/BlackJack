@@ -24,15 +24,15 @@ public class Rules {
         this.ace = ace;
     }
 
-    public boolean isHit(List<Pair<Suit, Denomination>> hand) {
+    private boolean isHit(List<Pair<Suit, Denomination>> hand) {
         return hit.isHit(hand);
     }
 
-    public boolean isAce(List<Pair<Suit, Denomination>> hand) {
+    private boolean isAce(List<Pair<Suit, Denomination>> hand) {
         return ace.isEleven(hand);
     }
 
-    public boolean isStay(List<Pair<Suit, Denomination>> hand) {
+    private boolean isStay(List<Pair<Suit, Denomination>> hand) {
         return stay.isStay(hand);
     }
 }
