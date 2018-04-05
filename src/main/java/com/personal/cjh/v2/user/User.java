@@ -28,7 +28,7 @@ public class User extends Hand {
         System.out.println();
     }
 
-    int counting() {
+    public int counting() {
         return ruleChecker.calculate(getHand());
     }
 }

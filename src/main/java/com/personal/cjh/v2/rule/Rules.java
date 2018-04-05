@@ -25,22 +25,36 @@ public class Rules {
     }
 
     public int calculate(List<Pair<Suit, Denomination>> hand) {
-        int sum = 0;
+        int aceElevenCounting = 0;
+        int aceOneCounting = 0;
+        int aceCardCounting = 0;
 
         for (Pair<Suit, Denomination> card : hand) {
             if (card.getRight() == Denomination.ACE) {
-                if (isAce(hand)) {
-                    System.out.println("11");
-                    sum += 11;
-                } else {
-                    System.out.println("1");
-                    sum += Denomination.ACE.getProperty();
-                }
+                aceElevenCounting += 11;
+                aceOneCounting += 1;
+                aceCardCounting++;
             } else {
-                sum += card.getRight().getProperty();
+                aceElevenCounting += card.getRight().getProperty();
+                aceOneCounting += card.getRight().getProperty();
             }
         }
-        return sum;
+
+        if (aceElevenCounting <= 21) {
+            return aceElevenCounting;
+        } else if (aceElevenCounting > 21) {
+            if (aceCardCounting > 0) {
+                int temp = aceElevenCounting;
+                for (int i = 0; i < 4; i++) {
+                    temp = temp - 10;
+                    if (temp <= 21) return temp;
+                }
+                return aceElevenCounting;
+            } else {
+                return aceElevenCounting;
+            }
+        }
+        return 0;
     }
 
     private boolean isHit(List<Pair<Suit, Denomination>> hand) {

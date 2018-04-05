@@ -2,13 +2,14 @@
  * Copyright (c) 2018. JeongHa-Cho all rights reserved.
  */
 
-package com.personal.cjh.v2.user;
+package com.personal.cjh.v2;
 
 import com.personal.cjh.v2.card.Denomination;
 import com.personal.cjh.v2.card.Suit;
 import com.personal.cjh.v2.rule.ace.UnlessBust;
 import com.personal.cjh.v2.rule.hit.HitChoice;
 import com.personal.cjh.v2.rule.stay.UnconditionalStay;
+import com.personal.cjh.v2.user.Dealer;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
 

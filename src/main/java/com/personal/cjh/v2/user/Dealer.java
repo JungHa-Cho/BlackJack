@@ -38,4 +38,10 @@ public class Dealer extends User {
         deck.remove(index);
         return temp;
     }
+
+    public void isHit() {
+        if(counting() < 17) {
+            receiveCard(drawCard());
+        }
+    }
 }

@@ -2,13 +2,14 @@
  * Copyright (c) 2018. JeongHa-Cho all rights reserved.
  */
 
-package com.personal.cjh.v2.user;
+package com.personal.cjh.v2;
 
 import com.personal.cjh.v2.card.Denomination;
 import com.personal.cjh.v2.card.Suit;
 import com.personal.cjh.v2.rule.ace.UnlessBust;
 import com.personal.cjh.v2.rule.hit.HitChoice;
 import com.personal.cjh.v2.rule.stay.UnconditionalStay;
+import com.personal.cjh.v2.user.Dealer;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.After;
 import org.junit.Before;
@@ -33,15 +34,22 @@ public class 딜러_단위_테스트 {
 
     @Test
     public void 딜러_카운팅() {
-        // Given - 검사 Deck 생성
-        List<Pair<Suit, Denomination>> deck = new ArrayList<>();
-
         // Given - 딜러 생성
-        Dealer dd = new Dealer(new HitChoice(), new UnconditionalStay(), new UnlessBust());
-        dd.receiveCard(Pair.of(Suit.SPADE, Denomination.ACE));
+        Dealer d1 = new Dealer(new HitChoice(), new UnconditionalStay(), new UnlessBust());
+        Dealer d2 = new Dealer(new HitChoice(), new UnconditionalStay(), new UnlessBust());
+        Dealer d3 = new Dealer(new HitChoice(), new UnconditionalStay(), new UnlessBust());
 
-        // When - isAce 호출
-        assertThat(dd.counting()).isEqualTo(11);
+        // When - 카드 삽입
+        d1.receiveCard(Pair.of(Suit.SPADE, Denomination.ACE));
+        d2.receiveCard(Pair.of(Suit.CLOVER, Denomination.ACE));
+        d2.receiveCard(Pair.of(Suit.DIAMOND, Denomination.JACK));
+        d3.receiveCard(Pair.of(Suit.HEART, Denomination.ACE));
+        d3.receiveCard(Pair.of(Suit.SPADE, Denomination.ACE));
+
+        // When - 카운팅 검사
+        assertThat(d1.counting()).isEqualTo(11);
+        assertThat(d2.counting()).isEqualTo(21);
+        assertThat(d3.counting()).isEqualTo(12);
     }
 
     @Test

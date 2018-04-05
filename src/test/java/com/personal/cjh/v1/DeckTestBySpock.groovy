@@ -1,4 +1,8 @@
-package personal.cjh.BlackJack.deck
+/*
+ * Copyright (c) 2018. JeongHa-Cho all rights reserved.
+ */
+
+package com.personal.cjh.v1
 
 import com.personal.cjh.v1.card.Deck
 import com.personal.cjh.v1.card.Denomination

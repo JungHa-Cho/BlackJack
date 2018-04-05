@@ -10,9 +10,8 @@
 2018-03-29 : BlackJack Diagram ver 3 [github.io 링크 - 7편](https://jungha-cho.github.io/2018/03/29/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(7)/)                 
 2018-03-29 : BlackJack Diagram ver 4 [github.io 링크 - 8편](https://jungha-cho.github.io/2018/03/29/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(8)/)                                 
 2018-03-29 : BlackJack Diagram ver 5 [github.io 링크 - 9편](https://jungha-cho.github.io/2018/03/29/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(9)/)                                                                     
-2018-03-29 : BlackJack Diagram ver 6 [github.io 링크 - 10편](https://jungha-cho.github.io/2018/03/30/객체지향설계-블랙잭(10)/)                    
-
-2018-04-02 : BlackJack Diagram ver 7 [github.io 링크 - 11편](https://jungha-cho.github.io/2018/04/01/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(11)/)            
+2018-03-29 : BlackJack Diagram ver 6 [github.io 링크 - 10편](https://jungha-cho.github.io/2018/03/30/객체지향설계-블랙잭(10)/)                        
+2018-04-02 : BlackJack Diagram ver 7 [github.io 링크 - 11편](https://jungha-cho.github.io/2018/04/01/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(11)/)                                
 
 
 2018-04-02, V2 시작
@@ -29,7 +28,7 @@
 
 > 미해결 문제, 유저의 세부 규칙이 미적용 되어 있다. 스플릿, 더블다운, 인셔런스, 푸시, 이븐머니, 서렌더 등
 
-2018-04-04, V2 규첵 명세 분리
+2018-04-04, V2 규칙 명세 분리
 * 플레이어 규칙
 * ACE : 플레이어는 ACE CARD의 점수를 1 또는 11로 카운팅 할 수 있다.
 * HIT : 플에이어는 Hit 선택시 카드 숫자가 17이 되지 않으면 무조건 히트 한다.
@@ -38,6 +37,16 @@
 * WIN : 내가 이기지 않아도 딜러가 지면 무조건 이긴다.
 * STAY : 내 핸드가 17 오버 이고, 딜러 핸드 또한 17 오버 일때
 
-
-
 ![blackjack_v9.JPG](/image/blackjack_v9.JPG)
+
+2018-04-05, V2 버전 폐기.... 회고록
+**문제점 리뷰..  설계가 불완전함...**
+**보는 사람이 문제 없이 동작하게끔 구현 가능하지만, 스스로 코드를 사용 하는 입장에서, 설계 실패**
+**사람별 룰을 분리하기위해 STRATEGY 패턴을 사용했지만 쓸모가 없음... 즉 알고리즘 군 사용하지 않음**
+**TDD를 활용하지 못함. 인수 테스트 고리를 만들고 그안에서 단위 테스트 고리를 작은 단위로 굴리기 위한 실천이 안됨**
+**abstract, interface 활용하지 못함... 스스로 정확하게 이해하지 못하다보니 설계에 구멍이 많음**
+**리팩토링을 지속적으로 적용해 고치려 했으나, 게임 자체의 명확한 이해가 부족하다보니, 스스로 구멍이 더 많아지는 걸 느낌**
+**회고록 수준으로 남겨놓기 위해 버전별로 코드 관리함**
+
+> **코드 레벨 구조 설계법 부터 명확히 하고, 스스로 게임에 관한 명세 분석을 철저히 해 V3로 돌아오겠음**
+> **공부는 계속된다!!**
