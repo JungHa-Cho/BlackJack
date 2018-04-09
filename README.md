@@ -1,3 +1,7 @@
+V1 - [link](https://github.com/JungHa-Cho/GAME-BlackJack/tree/master/src/main/java/com/personal/cjh/v1)
+V2 - [link](https://github.com/JungHa-Cho/GAME-BlackJack/tree/master/src/main/java/com/personal/cjh/v2)
+V3 - [link](https://github.com/JungHa-Cho/GAME-BlackJack/tree/master/src/main/java/com/personal/cjh/v3)
+
 #### 블랙잭 게임, OOP 설계 연습    
 2018-03-12 : 규칙 파악 [github.io 링크 - 1편](https://jungha-cho.github.io/2018/03/12/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(1)/)              
 2018-03-13 : Deck 설계 [github.io 링크 - 2편](https://jungha-cho.github.io/2018/03/12/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(2)/)               
@@ -12,6 +16,7 @@
 2018-03-29 : BlackJack Diagram ver 5 [github.io 링크 - 9편](https://jungha-cho.github.io/2018/03/29/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(9)/)                                                                     
 2018-03-29 : BlackJack Diagram ver 6 [github.io 링크 - 10편](https://jungha-cho.github.io/2018/03/30/객체지향설계-블랙잭(10)/)                        
 2018-04-02 : BlackJack Diagram ver 7 [github.io 링크 - 11편](https://jungha-cho.github.io/2018/04/01/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD(11)/)                                
+2018-04-09 : V3 시작함!! [github.io 링크 - 13편](https://jungha-cho.github.io/2018/04/09/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%84%A4%EA%B3%84-%EB%B8%94%EB%9E%99%EC%9E%AD-13/)
 
 
 2018-04-02, V2 시작
@@ -50,3 +55,8 @@
 
 > **코드 레벨 구조 설계법 부터 명확히 하고, 스스로 게임에 관한 명세 분석을 철저히 해 V3로 돌아오겠음**
 > **공부는 계속된다!!**
+
+
+2018-04-09 V3 버전 시작!!!!
+2018-04-09 : Game의 인수 테스트 작성 중 game.initialize()를 완성하기 위해서는 Suit와 Denomonation이 필요하고 Card 클래스가 필요해 Card 클래스 유닛 테스트 작성을 시작함                                
+2018-04-09 : TDD 원칙 준수, 테스트 없이는 코드도 없다.                         
