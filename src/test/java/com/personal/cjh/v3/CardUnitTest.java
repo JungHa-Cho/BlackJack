@@ -11,8 +11,7 @@ import org.junit.Test;
 
 import static com.personal.cjh.v3.card.Denomination.*;
 import static com.personal.cjh.v3.card.Suit.*;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Card Unit Test.
@@ -22,69 +21,81 @@ import static org.junit.Assert.assertThat;
  */
 public class CardUnitTest {
 
-    private Card getCard(Suit heart, Denomination denomination) {
-        return new Card(heart, denomination);
+    private boolean isEqual(Suit suit, Suit suit1) {
+        return new Card(suit, null).isEqual(suit1);
+    }
+
+    private boolean isEqual(Denomination denom, Denomination denom1) {
+        return new Card(null, denom).isEqual(denom1);
+    }
+
+    private boolean isEqual(String heart, String actual) {
+        return actual.equals(heart);
+    }
+
+    private boolean isEqual(int actual1, int actual) {
+        return actual == actual1;
     }
 
     /**
      * Suit 모양 기본 검사.
      */
     @Test
-    public void SUIT_모양_기본_검사() {
-        assertThat(getCard(HEART, null).isEqual(HEART), is(true));
-        assertThat(getCard(SPADE, null).isEqual(SPADE), is(true));
-        assertThat(getCard(CLOVER, null).isEqual(CLOVER), is(true));
-        assertThat(getCard(DIAMOND, null).isEqual(DIAMOND), is(true));
+    public void SUIT_객체_비교_검사() {
+        assertTrue(isEqual(HEART, HEART));
+        assertTrue(isEqual(SPADE, SPADE));
+        assertTrue(isEqual(CLOVER, CLOVER));
+        assertTrue(isEqual(DIAMOND, DIAMOND));
     }
 
     /**
      * Suit 모양 속성 검사.
      */
     @Test
-    public void SUIT_모양_속성_검사() {
-        assertThat(HEART.toString(), is("HEART"));
-        assertThat(SPADE.toString(), is("SPADE"));
-        assertThat(DIAMOND.toString(), is("DIAMOND"));
-        assertThat(CLOVER.toString(), is("CLOVER"));
+    public void SUIT_속성_비교_검사() {
+        assertTrue(isEqual("HEART", HEART.toString()));
+        assertTrue(isEqual("SPADE", SPADE.toString()));
+        assertTrue(isEqual("DIAMOND", DIAMOND.toString()));
+        assertTrue(isEqual("CLOVER", CLOVER.toString()));
     }
 
     /**
      * Denom 숫자 기본 검사.
      */
     @Test
-    public void DENOM_숫자_기본_검사() {
-        assertThat(getCard(null, ACE).isEqual(ACE), is(true));
-        assertThat(getCard(null, TWO).isEqual(TWO), is(true));
-        assertThat(getCard(null, THREE).isEqual(THREE), is(true));
-        assertThat(getCard(null, FOUR).isEqual(FOUR), is(true));
-        assertThat(getCard(null, FIVE).isEqual(FIVE), is(true));
-        assertThat(getCard(null, SIX).isEqual(SIX), is(true));
-        assertThat(getCard(null, SEVEN).isEqual(SEVEN), is(true));
-        assertThat(getCard(null, EIGHT).isEqual(EIGHT), is(true));
-        assertThat(getCard(null, NINE).isEqual(NINE), is(true));
-        assertThat(getCard(null, TEN).isEqual(TEN), is(true));
-        assertThat(getCard(null, KING).isEqual(KING), is(true));
-        assertThat(getCard(null, QUEEN).isEqual(QUEEN), is(true));
-        assertThat(getCard(null, JACK).isEqual(JACK), is(true));
+    public void DENOM_객체_비교_검사() {
+        assertTrue(isEqual(ACE, ACE));
+        assertTrue(isEqual(TWO, TWO));
+        assertTrue(isEqual(THREE, THREE));
+        assertTrue(isEqual(FOUR, FOUR));
+        assertTrue(isEqual(FIVE, FIVE));
+        assertTrue(isEqual(SIX, SIX));
+        assertTrue(isEqual(SEVEN, SEVEN));
+        assertTrue(isEqual(EIGHT, EIGHT));
+        assertTrue(isEqual(NINE, NINE));
+        assertTrue(isEqual(TEN, TEN));
+        assertTrue(isEqual(KING, KING));
+        assertTrue(isEqual(QUEEN, QUEEN));
+        assertTrue(isEqual(JACK, JACK));
     }
 
     /**
      * Deno 숫자 속성 검사.
      */
     @Test
-    public void DENO_숫자_속성_검사() {
-        assertThat(ACE.getProperty(), is(1));
-        assertThat(TWO.getProperty(), is(2));
-        assertThat(THREE.getProperty(), is(3));
-        assertThat(FOUR.getProperty(), is(4));
-        assertThat(FIVE.getProperty(), is(5));
-        assertThat(SIX.getProperty(), is(6));
-        assertThat(SEVEN.getProperty(), is(7));
-        assertThat(EIGHT.getProperty(), is(8));
-        assertThat(NINE.getProperty(), is(9));
-        assertThat(TEN.getProperty(), is(10));
-        assertThat(KING.getProperty(), is(10));
-        assertThat(QUEEN.getProperty(), is(10));
-        assertThat(JACK.getProperty(), is(10));
+    public void DENOM_속성_비교_검사() {
+        assertTrue(isEqual(1, ACE.getProperty()));
+        assertTrue(isEqual(2, TWO.getProperty()));
+        assertTrue(isEqual(3, THREE.getProperty()));
+        assertTrue(isEqual(4, FOUR.getProperty()));
+        assertTrue(isEqual(5, FIVE.getProperty()));
+        assertTrue(isEqual(6, SIX.getProperty()));
+        assertTrue(isEqual(7, SEVEN.getProperty()));
+        assertTrue(isEqual(8, EIGHT.getProperty()));
+        assertTrue(isEqual(9, NINE.getProperty()));
+        assertTrue(isEqual(10, TEN.getProperty()));
+        assertTrue(isEqual(10, KING.getProperty()));
+        assertTrue(isEqual(10, QUEEN.getProperty()));
+        assertTrue(isEqual(10, JACK.getProperty()));
     }
 }
