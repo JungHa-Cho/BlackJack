@@ -60,3 +60,4 @@ V3 - [link](https://github.com/JungHa-Cho/GAME-BlackJack/tree/master/src/main/ja
 2018-04-09 V3 버전 시작!!!!
 2018-04-09 : Game의 인수 테스트 작성 중 game.initialize()를 완성하기 위해서는 Suit와 Denomonation이 필요하고 Card 클래스가 필요해 Card 클래스 유닛 테스트 작성을 시작함                                
 2018-04-09 : TDD 원칙 준수, 테스트 없이는 코드도 없다.                         
+2018-04-10 : 플레이어 TDD 적용중

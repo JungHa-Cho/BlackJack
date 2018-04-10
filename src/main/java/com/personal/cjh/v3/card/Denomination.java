@@ -8,58 +8,9 @@ package com.personal.cjh.v3.card;
  * 끗수.
  */
 public enum Denomination {
-    /**
-     * Ace denomination.
-     */
-    ACE(1),
-    /**
-     * Two denomination.
-     */
-    TWO(2),
-    /**
-     * Three denomination.
-     */
-    THREE(3),
-    /**
-     * Four denomination.
-     */
-    FOUR(4),
-    /**
-     * Five denomination.
-     */
-    FIVE(5),
-    /**
-     * Six denomination.
-     */
-    SIX(6),
-    /**
-     * Seven denomination.
-     */
-    SEVEN(7),
-    /**
-     * Eight denomination.
-     */
-    EIGHT(8),
-    /**
-     * Nine denomination.
-     */
-    NINE(9),
-    /**
-     * Ten denomination.
-     */
-    TEN(10),
-    /**
-     * King denomination.
-     */
-    KING(10),
-    /**
-     * Queen denomination.
-     */
-    QUEEN(10),
-    /**
-     * Jack denomination.
-     */
-    JACK(10);
+    ACE(1), TWO(2), THREE(3), FOUR(4), FIVE(5),
+    SIX(6), SEVEN(7), EIGHT(8), NINE(9), TEN(10),
+    KING(10), QUEEN(10), JACK(10);
 
     private final int property;
 
