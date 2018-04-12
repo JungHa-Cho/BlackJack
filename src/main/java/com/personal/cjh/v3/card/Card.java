@@ -57,6 +57,10 @@ public class Card {
         return suit == card.getKey();
     }
 
+    public int count() {
+        return card.getValue().getProperty();
+    }
+
     @Override
     public String toString() {
         return "[" +

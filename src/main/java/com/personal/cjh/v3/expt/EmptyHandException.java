@@ -9,13 +9,13 @@ package com.personal.cjh.v3.expt;
  * @project BlackJack
  * @update 2018-04-12
  **/
-public class EmptyDeckException extends RuntimeException {
+public class EmptyHandException extends RuntimeException {
 
-    public EmptyDeckException() {
+    public EmptyHandException() {
         super();
     }
 
-    public EmptyDeckException(String message) {
+    public EmptyHandException(String message) {
         super(message);
     }
 }

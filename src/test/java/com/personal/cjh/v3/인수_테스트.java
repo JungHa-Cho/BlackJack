@@ -4,6 +4,8 @@
 
 package com.personal.cjh.v3;
 
+import com.personal.cjh.v3.card.Deck;
+import com.personal.cjh.v3.card.Hand;
 import com.personal.cjh.v3.user.Dealer;
 import com.personal.cjh.v3.user.Player;
 import org.junit.Before;
@@ -13,10 +15,12 @@ import org.junit.Test;
 public class 인수_테스트 {
 
     private Game game;
+    private Deck deck;
 
     @Before
     public void setUp() throws Exception {
-        game = new Game();
+        deck = new Deck();
+        game = new Game(deck);
     }
 
     @Ignore
@@ -34,9 +38,10 @@ public class 인수_테스트 {
     @Test
     public void 블랙잭_게임을_시작하기위한_초기화가_가능한가() {
         /* 카드 두장씩 나눠주기 테스트 인수 테스트*/
-        Dealer dealer;
-        Player player;
-//        game.initializeGame(dealer, player, player);
+        Dealer dealer = new Dealer(new Hand(), deck);
+        Player player = new Player(new Hand());
+
+        game.initializeGame(dealer, player);
     }
 
     /**
