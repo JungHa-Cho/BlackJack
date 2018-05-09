@@ -6,9 +6,9 @@ package com.personal.cjh.v3.card;
 
 import com.personal.cjh.v3.expt.EmptyDeckException;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  * 덱 클래스.
@@ -21,7 +21,7 @@ import java.util.Set;
  * 2018-04-10 싱글톤 폐쇄. 궂이 덱을 싱글톤으로 생성할 이유가 없음.
  */
 public class Deck {
-    private Set<Card> cards;
+    private List<Card> cards;
 
     /**
      * Instantiates a new Deck.
@@ -35,7 +35,7 @@ public class Deck {
      */
     public void shuffle() {
         if (cards == null) {
-            cards = new HashSet<>();
+            cards = new ArrayList<>();
             initialize();
         }
     }
@@ -61,9 +61,10 @@ public class Deck {
     }
 
     private Card draw() {
-        Iterator<Card> cardIterator = cards.iterator();
-        Card card = cardIterator.next();
-        cardIterator.remove();
-        return card;
+        Random random = new Random();
+        int index = random.nextInt(cards.size());
+        Card val = cards.get(index);
+        cards.remove(index);
+        return val;
     }
 }

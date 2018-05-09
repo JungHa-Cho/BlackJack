@@ -23,6 +23,10 @@ public class Player implements User {
         this.hand = hand;
     }
 
+    public Hand getHand() {
+        return hand;
+    }
+
     public void hit(Card card) {
         hand.receive(card);
     }

@@ -27,6 +27,10 @@ public class Hand {
         hand = new ArrayList<>();
     }
 
+    public List<Card> getHand() {
+        return hand;
+    }
+
     /**
      * Receive.
      *

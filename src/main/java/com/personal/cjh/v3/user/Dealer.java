@@ -37,6 +37,10 @@ public class Dealer implements User {
         this.deck = deck;
     }
 
+    public Hand getHand() {
+        return hand;
+    }
+
     /**
      * Shuffle.
      */
